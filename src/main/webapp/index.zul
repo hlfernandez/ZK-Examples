@@ -1,0 +1,16 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:zk="http://www.zkoss.org/2005/zk">
+    <div height="380px">
+        <window id="win" border="normal" width="350px" minheight="350" mode="overlapped" position="center">
+            <caption label="List of examples"/>
+            	<borderlayout height="300px">
+            		<center>
+            			<vlayout>
+							<h:ul>
+								<h:li><a href="/examples/DinamicTable.zul" label="Dinamic Table example"/></h:li>
+							</h:ul>
+						</vlayout>
+            		</center>
+            	</borderlayout>
+		</window>
+	</div>
+</zk>
