@@ -6,7 +6,8 @@
             		<center>
             			<vlayout>
 							<h:ul>
-								<h:li><a href="/examples/DinamicTable.zul" label="Dinamic Table example"/></h:li>
+								<h:li><a href="/examples/DinamicTable.zul" label="Dinamic table example"/></h:li>
+								<h:li><a href="/examples/DinamicTableWithCustomPopup.zul" label="Dinamic table with custom popup example"/></h:li>
 							</h:ul>
 						</vlayout>
             		</center>

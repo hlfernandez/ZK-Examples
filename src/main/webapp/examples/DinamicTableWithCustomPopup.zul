@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?page title="Dinamic Table" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<groupbox mold="3d" width="50%" open="true" 
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('es.uvigo.ei.sing.hlfernandez.grid.DinamicTableViewModelWithCustomPopup')"
+	>
+		<caption label="Dinamic Table" width="100%"/>
+		
+		<menupopup id="customPopup" children="@load(vm.columns)">
+			<template name="children">
+	        	<menuitem 
+	        		label="@load(each.name)" 
+	        		checkmark="true" 
+	        		checked="@bind(each.visible)" 
+	        		onClick="@command('hideColumn', column = each)"
+	        	/>
+	        </template>
+    	</menupopup>
+    	
+		<grid model="@load(vm.rows)" height="200px">
+			<columns children="@load(vm.columns)" menupopup="customPopup">
+				<template name="children">
+					<column 
+						label="@load(each.name)" 
+						tooltiptext="@load(each.description)" 
+						visible="@bind(each.visible)"
+					/>
+				</template>
+			</columns>
+			
+			<template name="model" var="r">
+				<row children="@load(vm.columns)">
+					<template name="children">
+						<label value="@load(r.getColumnValue(each))"/>
+					</template>
+				</row>
+			</template>
+		</grid>
+	</groupbox>
+</zk>
